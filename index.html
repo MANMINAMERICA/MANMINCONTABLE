@@ -13,6 +13,8 @@
         body {
             font-family: 'Inter', sans-serif;
             background-color: #f8fafc;
+            margin: 0;
+            overflow-x: hidden;
         }
         .neo-card {
             border-radius: 40px;
@@ -25,15 +27,16 @@
         .btn-neo:hover {
             transform: translateY(-2px);
         }
-        ::-webkit-scrollbar {
-            width: 6px;
-        }
-        ::-webkit-scrollbar-track {
-            background: transparent;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #e2e8f0;
-            border-radius: 10px;
+        #root:empty::after {
+            content: "Iniciando Canaan Finance Manager...";
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            font-weight: 900;
+            color: #4f46e5;
+            font-size: 1.2rem;
+            letter-spacing: -0.05em;
         }
     </style>
 <script type="importmap">
@@ -48,10 +51,11 @@
   }
 }
 </script>
-<link rel="stylesheet" href="/index.css">
+<script type="module" src="https://esm.sh/run"></script>
 </head>
 <body>
     <div id="root"></div>
-<script type="module" src="/index.tsx"></script>
+    <!-- Este es el punto crítico: vinculamos el código de la app -->
+    <script type="text/tsx" src="./index.tsx"></script>
 </body>
 </html>
