@@ -6,56 +6,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Canaan Finance Manager</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    
+    <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@19.0.0",
+    "react-dom": "https://esm.sh/react-dom@19.0.0",
+    "react-dom/client": "https://esm.sh/react-dom@19.0.0/client",
+    "recharts": "https://esm.sh/recharts@2.12.7",
+    "lucide-react": "https://esm.sh/lucide-react@0.460.0",
+    "@supabase/supabase-js": "https://esm.sh/@supabase/supabase-js@2.43.5",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/"
+  }
+}
+</script>
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f8fafc;
-            margin: 0;
-            overflow-x: hidden;
-        }
-        .neo-card {
-            border-radius: 40px;
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
-        }
-        .btn-neo {
-            border-radius: 20px;
-            transition: all 0.2s ease;
-        }
-        .btn-neo:hover {
-            transform: translateY(-2px);
-        }
-        #root:empty::after {
-            content: "Iniciando Canaan Finance Manager...";
+        #root:empty::before {
+            content: "Cargando Sistema Canaan Finance...";
             display: flex;
             align-items: center;
             justify-content: center;
             height: 100vh;
-            font-weight: 900;
-            color: #4f46e5;
-            font-size: 1.2rem;
-            letter-spacing: -0.05em;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            color: #4338ca;
+            font-weight: 800;
+            background: #f8fafc;
+            text-align: center;
+            padding: 20px;
         }
     </style>
-<script type="importmap">
-{
-  "imports": {
-    "react": "https://esm.sh/react@^19.2.3",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
-    "react/": "https://esm.sh/react@^19.2.3/",
-    "@google/genai": "https://esm.sh/@google/genai@^1.36.0",
-    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
-    "recharts": "https://esm.sh/recharts@^3.6.0"
-  }
-}
-</script>
-<script type="module" src="https://esm.sh/run"></script>
 </head>
-<body>
+<body class="bg-slate-50 text-slate-900">
     <div id="root"></div>
-    <!-- Este es el punto crítico: vinculamos el código de la app -->
-    <script type="text/tsx" src="./index.tsx"></script>
+    <script type="text/babel" data-presets="react,typescript" data-type="module">
+        import "./index.tsx";
+    </script>
 </body>
 </html>
